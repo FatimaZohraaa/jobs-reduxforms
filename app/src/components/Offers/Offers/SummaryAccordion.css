@@ -1,0 +1,9 @@
+#logoOffer {
+  background-image: url("../../images/logo5.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#panel1d-header:hover {
+  background-color: rgb(240, 240, 240);
+}
