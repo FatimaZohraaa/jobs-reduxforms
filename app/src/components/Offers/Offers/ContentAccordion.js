@@ -20,7 +20,11 @@ function SecondDivPreview({ description, mission, profile, howToApply, id }) {
         <Typography
           id="missionTitle"
           variant="h5"
-          style={{ fontWeight: "bold", marginBottom: "10px" }}
+          style={{
+            fontWeight: "bold",
+            marginBottom: "20px",
+            marginTop: "20px",
+          }}
         >
           Missions
         </Typography>
@@ -30,7 +34,11 @@ function SecondDivPreview({ description, mission, profile, howToApply, id }) {
         <Typography
           id="profileTitle"
           variant="h5"
-          style={{ fontWeight: "bold", marginBottom: "10px" }}
+          style={{
+            fontWeight: "bold",
+            marginBottom: "20px",
+            marginTop: "20px",
+          }}
         >
           Profil recherché
         </Typography>
