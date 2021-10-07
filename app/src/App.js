@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <div style={{ marginLeft: "40px", marginRight: "40px" }}>
+        <div>
           <Route path="/" exact component={OffersPage} />
           <Route path="/hire" component={HirePage} />
         </div>

@@ -9,7 +9,7 @@ import "./SummaryAccordion.css";
 import { Typography } from "@mui/material";
 import { fetchOffers } from "../../../actions";
 import { connect } from "react-redux";
-
+import "./Offers.css";
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -57,6 +57,7 @@ function CustomizedAccordions({ offers, fetchOffers }) {
   return (
     <div>
       <Typography
+        id="dayFilter"
         variant="h4"
         style={{ fontWeight: "bold", marginBottom: "20px" }}
       >
@@ -71,6 +72,8 @@ function CustomizedAccordions({ offers, fetchOffers }) {
             <AccordionSummary
               aria-controls={`panel${index + 1}d-content`}
               id={`panel${index + 1}d-header`}
+              onClick={() => console.log("clicked")}
+              id="divAccordionSummary"
             >
               <SummaryAccordion
                 poste={offer.poste}
@@ -85,7 +88,7 @@ function CustomizedAccordions({ offers, fetchOffers }) {
                 mission={offer.mission}
                 description={offer.description}
                 profile={offer.profile}
-                index={index}
+                id={offer._id}
               />
             </AccordionDetails>
           </Accordion>

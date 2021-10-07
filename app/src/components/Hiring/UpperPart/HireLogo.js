@@ -17,6 +17,7 @@ function HireLogo() {
           fontFamily: "fantasy",
           marginTop: "20px",
           cursor: "pointer",
+          marginLeft: "8px",
         }}
         onClick={() => history.push("/")}
       >

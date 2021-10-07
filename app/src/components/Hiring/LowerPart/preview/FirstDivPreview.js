@@ -5,6 +5,7 @@ import Chip from "@mui/material/Chip";
 import { Typography } from "@mui/material";
 import { connect } from "react-redux";
 import "./FirstDiv.css";
+
 function BasicGrid({ form }) {
   function renderPoste() {
     if (form.infoForm) {
@@ -30,11 +31,45 @@ function BasicGrid({ form }) {
     }
     return "Nom de l'entreprise";
   }
-  function renderTags() {
+  function renderTag1() {
     if (form.infoForm) {
       if (form.infoForm.values) {
         if (form.infoForm.values.tags) {
-          return form.infoForm.values.tags;
+          return form.infoForm.values.tags.split(",")[0];
+        }
+      } else {
+        return "mot-clé";
+      }
+    }
+    return "mot-clé";
+  }
+  function renderTag2() {
+    if (form.infoForm) {
+      if (form.infoForm.values) {
+        if (form.infoForm.values.tags) {
+          console.log(form.infoForm.values.tags[1]);
+          if (form.infoForm.values.tags.split(",")[1]) {
+            return form.infoForm.values.tags.split(",")[1];
+          } else {
+            return "mot-clé";
+          }
+        }
+      } else {
+        return "mot-clé";
+      }
+    }
+    return "mot-clé";
+  }
+  function renderTag3() {
+    if (form.infoForm) {
+      if (form.infoForm.values) {
+        if (form.infoForm.values.tags) {
+          console.log(form.infoForm.values.tags[2]);
+          if (form.infoForm.values.tags.split(",")[2]) {
+            return form.infoForm.values.tags.split(",")[2];
+          } else {
+            return "mot-clé";
+          }
         }
       } else {
         return "mot-clé";
@@ -97,7 +132,7 @@ function BasicGrid({ form }) {
             <Typography>
               <p
                 style={{
-                  border: "0.5px solid black",
+                  border: "2px solid gray",
                   borderRadius: "10px",
                   marginTop: "10px",
                   padding: "5px",
@@ -105,7 +140,35 @@ function BasicGrid({ form }) {
                   fontSize: "13px",
                 }}
               >
-                {renderTags()}
+                {renderTag1()}
+              </p>
+            </Typography>
+            <Typography>
+              <p
+                style={{
+                  border: "2px solid gray",
+                  borderRadius: "10px",
+                  marginTop: "10px",
+                  padding: "5px",
+                  marginRight: "2px",
+                  fontSize: "13px",
+                }}
+              >
+                {renderTag2()}
+              </p>
+            </Typography>
+            <Typography>
+              <p
+                style={{
+                  border: "2px solid gray",
+                  borderRadius: "10px",
+                  marginTop: "10px",
+                  padding: "5px",
+                  marginRight: "2px",
+                  fontSize: "13px",
+                }}
+              >
+                {renderTag3()}
               </p>
             </Typography>
           </div>

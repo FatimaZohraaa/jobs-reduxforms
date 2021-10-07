@@ -6,6 +6,7 @@ import { Typography } from "@mui/material";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import WorkspacesIcon from "@mui/icons-material/Workspaces";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import "./HeaderOffer.css";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -26,6 +27,7 @@ function ExploreJobs() {
             marginBottom: "30px",
             color: "black",
           }}
+          id="textExploreTitle"
         >
           Explore AI Jobs:
         </Typography>
@@ -54,8 +56,9 @@ function ExploreJobs() {
                   marginTop: "10px",
                   cursor: "pointer",
                   color: "black",
-                  fontSize: "19px",
+                  fontSize: "18px",
                 }}
+                className="textExploreButton"
               >
                 Trouver des emplois
               </Typography>
@@ -77,8 +80,9 @@ function ExploreJobs() {
                   minHeight: "30px",
                   marginTop: "10px",
                   color: "black",
-                  fontSize: "19px",
+                  fontSize: "18px",
                 }}
+                className="textExploreButton"
               >
                 Découvrir les entreprises
               </Typography>
@@ -100,8 +104,9 @@ function ExploreJobs() {
                   marginTop: "10px",
                   cursor: "pointer",
                   color: "black",
-                  fontSize: "19px",
+                  fontSize: "18px",
                 }}
+                className="textExploreButton"
               >
                 Apprendre et se former
               </Typography>

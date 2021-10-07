@@ -4,118 +4,90 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Chip from "@mui/material/Chip";
 import { Typography } from "@mui/material";
 import "./SummaryAccordion.css";
+
 export default function BasicGrid({ poste, entreprise, tags, place }) {
   return (
-    <Grid
-      container
-      id="divSummary"
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        flexWrap: "nowrap",
-        minHeight: "9vh",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "start",
-          width: "400px",
-        }}
-      >
-        <div
-          id="logoOffer"
-          onClick={(e) => e.stopPropagation()}
-          style={{
-            maxHeight: "8vh",
-            width: "70px",
-            marginTop: "10px",
-            minHeight: "5vh",
-            paddingBottom: "5px",
-          }}
-        ></div>
-        <div
-          onClick={(e) => e.stopPropagation()}
-          elevation="none"
-          style={{
-            maxHeight: "10px",
-            textAlign: "start",
-            marginLeft: "10px",
-          }}
-        >
-          <Typography variant="h6" style={{ fontSize: "18px" }}>
+    <Grid container id="divSummary">
+      <div id="divMainInfo">
+        <div id="divLogo"></div>
+        <div id="divName">
+          <Typography
+            variant="h6"
+            style={{ width: "max-content   " }}
+            onClick={(e) => e.stopPropagation()}
+            id="divNameTitle"
+          >
             {poste}
           </Typography>
-          <Typography style={{ fontSize: "13px" }}>{entreprise}</Typography>
-          <div style={{ display: "flex" }}>
+          <Typography
+            style={{ fontSize: "13px", width: "max-content   " }}
+            id="divNameSubTitle"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {entreprise}
+          </Typography>
+          <div id="divTags">
+            {window.innerWidth > 620 ? (
+              ""
+            ) : (
+              <Typography>
+                <p className="tag" onClick={(e) => e.stopPropagation()}>
+                  {place}
+                </p>
+              </Typography>
+            )}
             <Typography>
-              <p
-                style={{
-                  border: "0.5px solid black",
-                  borderRadius: "10px",
-                  marginTop: "10px",
-                  padding: "5px",
-                  marginRight: "2px",
-                  fontSize: "13px",
-                }}
-              >
-                {tags}
-              </p>
+              {tags.split(",")[0] ? (
+                <p className="tag" onClick={(e) => e.stopPropagation()}>
+                  {tags.split(",")[0]}
+                </p>
+              ) : (
+                ""
+              )}
             </Typography>
             <Typography>
-              <p
-                style={{
-                  border: "0.5px solid black",
-                  borderRadius: "10px",
-                  marginTop: "10px",
-                  padding: "5px",
-                  marginRight: "2px",
-                  fontSize: "13px",
-                }}
-              >
-                Software
-              </p>
+              {tags.split(",")[1] ? (
+                <p className="tag" onClick={(e) => e.stopPropagation()}>
+                  {tags.split(",")[1]}
+                </p>
+              ) : (
+                ""
+              )}
             </Typography>
             <Typography>
-              <p
-                style={{
-                  border: "0.5px solid black",
-                  borderRadius: "10px",
-                  marginTop: "10px",
-                  padding: "5px",
-                  marginRight: "2px",
-                  fontSize: "13px",
-                }}
-              >
-                Web
-              </p>
+              {tags.split(",")[2] ? (
+                <p className="tag" onClick={(e) => e.stopPropagation()}>
+                  {tags.split(",")[2]}
+                </p>
+              ) : (
+                ""
+              )}
             </Typography>
           </div>
         </div>
       </div>
 
-      <div elevation="none" onClick={(e) => e.stopPropagation()}>
+      <div id="divLocation">
         <Chip
           icon={<LocationOnIcon style={{ color: "white" }} />}
           label={place}
           variant="outlined"
           style={{
-            minWidth: "100px",
-            cursor: "pointer",
-            backgroundColor: " #000080",
+            width: "110px",
+            backgroundColor: "#00308F",
             color: "white",
           }}
+          onClick={(e) => e.stopPropagation()}
         />
       </div>
 
-      <div
-        elevation="none"
-        onClick={(e) => e.stopPropagation()}
-        style={{ fontFamily: "Roboto" }}
-      >
-        7 days ago
+      <div id="divTime">
+        <Typography
+          onClick={(e) => e.stopPropagation()}
+          style={{ width: "max-content   " }}
+        >
+          7h
+        </Typography>
       </div>
     </Grid>
   );
