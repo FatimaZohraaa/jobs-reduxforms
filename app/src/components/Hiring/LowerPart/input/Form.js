@@ -8,8 +8,8 @@ import { connect } from "react-redux";
 import TextField from "./TextField";
 import CheckBox from "./CheckBox";
 function Input1({ handleSubmit, addOffer }) {
-  function onSubmit(formValues) {
-    addOffer(formValues);
+  async function onSubmit(formValues) {
+    await addOffer(formValues);
     formValues.poste = "";
     formValues.entreprise = "";
     formValues.place = "";
@@ -23,7 +23,6 @@ function Input1({ handleSubmit, addOffer }) {
     formValues.twitterAccount = "";
     formValues.emailClient = "";
     formValues.salary = "";
-    console.log("offer submitted!");
   }
 
   return (
